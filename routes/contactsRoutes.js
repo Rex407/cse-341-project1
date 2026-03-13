@@ -5,9 +5,10 @@ const contactsController = require("../controllers/contactsController")
 
 /**
  * @swagger
- * /:
+ * /contacts:
  *   get:
  *     summary: Retrieve all contacts
+ *     description: Get a list of all contacts from MongoDB
  *     responses:
  *       200:
  *         description: Successfully returned all contacts
