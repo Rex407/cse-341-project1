@@ -14,6 +14,12 @@ const uri = process.env.MONGODB_URI
 
 const client = new MongoClient(uri)
 
+const swaggerUi = require("swagger-ui-express")
+const swaggerSpec = require("./swagger")
+
+app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerSpec))
+
+
 async function startServer() {
   try {
     // Connect to MongoDB

@@ -1,24 +1,34 @@
 const contactsModel = require("../models/contactsModel")
 
 async function getAll(req, res) {
-  try {
-    const contacts = await contactsModel.getAllContacts()
-    res.json(contacts)
-  } catch (error) {
-    res.status(500).json({ message: error.message })
-  }
+  const contacts = await contactsModel.getAllContacts()
+  res.json(contacts)
 }
 
 async function getSingle(req, res) {
-  try {
-    const contact = await contactsModel.getContactById(req.params.id)
-    res.json(contact)
-  } catch (error) {
-    res.status(500).json({ message: error.message })
-  }
+  const contact = await contactsModel.getContactById(req.params.id)
+  res.json(contact)
+}
+
+async function createContact(req, res) {
+  const result = await contactsModel.createContact(req.body)
+  res.status(201).json(result.insertedId)
+}
+
+async function updateContact(req, res) {
+  await contactsModel.updateContact(req.params.id, req.body)
+  res.status(204).send()
+}
+
+async function deleteContact(req, res) {
+  await contactsModel.deleteContact(req.params.id)
+  res.status(204).send()
 }
 
 module.exports = {
   getAll,
-  getSingle
+  getSingle,
+  createContact,
+  updateContact,
+  deleteContact
 }

@@ -1,0 +1,101 @@
+###################################################
+# CONTACTS API TEST FILE
+# CSE 341 Project - Rex Jonathan Kapoloma
+###################################################
+
+### Get all contacts (Localhost)
+GET http://localhost:3000/contacts
+Content-Type: application/json
+
+
+### Get all contacts (Render)
+GET https://project1-2q73.onrender.com/contacts
+Content-Type: application/json
+
+
+###################################################
+# GET CONTACT BY ID
+###################################################
+
+### Get a single contact (Localhost)
+GET http://localhost:3000/contacts/PUT_CONTACT_ID_HERE
+Content-Type: application/json
+
+
+### Get a single contact (Render)
+GET https://project1-2q73.onrender.com/contacts/PUT_CONTACT_ID_HERE
+Content-Type: application/json
+
+
+###################################################
+# CREATE NEW CONTACT
+###################################################
+
+### Create contact (Localhost)
+POST http://localhost:3000/contacts
+Content-Type: application/json
+
+{
+  "firstName": "Rex",
+  "lastName": "Kapoloma",
+  "email": "rex@example.com",
+  "favoriteColor": "Blue",
+  "birthday": "1999-04-12"
+}
+
+
+### Create contact (Render)
+POST https://project1-2q73.onrender.com/contacts
+Content-Type: application/json
+
+{
+  "firstName": "Jane",
+  "lastName": "Smith",
+  "email": "jane@email.com",
+  "favoriteColor": "Purple",
+  "birthday": "1997-08-20"
+}
+
+
+###################################################
+# UPDATE CONTACT
+###################################################
+
+### Update contact (Localhost)
+PUT http://localhost:3000/contacts/PUT_CONTACT_ID_HERE
+Content-Type: application/json
+
+{
+  "firstName": "Rex",
+  "lastName": "Jonathan",
+  "email": "rex@email.com",
+  "favoriteColor": "Green",
+  "birthday": "1999-04-12"
+}
+
+
+### Update contact (Render)
+PUT https://project1-2q73.onrender.com/contacts/PUT_CONTACT_ID_HERE
+Content-Type: application/json
+
+{
+  "firstName": "Jane",
+  "lastName": "Johnson",
+  "email": "jane@email.com",
+  "favoriteColor": "Red",
+  "birthday": "1997-08-20"
+}
+
+
+###################################################
+# DELETE CONTACT
+###################################################
+
+### Delete contact (Localhost)
+DELETE http://localhost:3000/contacts/PUT_CONTACT_ID_HERE
+Content-Type: application/json
+
+
+### Delete contact (Render)
+DELETE https://project1-2q73.onrender.com/contacts/PUT_CONTACT_ID_HERE
+Content-Type: application/json
