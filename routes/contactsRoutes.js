@@ -77,7 +77,7 @@ router.post("/", contactsController.createContact)
  *         schema:
  *           type: string
  *     responses:
- *       204:
+ *       200:
  *         description: Contact updated successfully
  */
 router.put("/:id", contactsController.updateContact)

@@ -17,7 +17,7 @@ async function createContact(req, res) {
 
 async function updateContact(req, res) {
   await contactsModel.updateContact(req.params.id, req.body)
-  res.status(204).send()
+  res.status(200).send()
 }
 
 async function deleteContact(req, res) {
